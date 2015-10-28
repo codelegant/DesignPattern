@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>Public</title>
+	<script src="http://cdn.bootcss.com/jquery/2.1.4/jquery.min.js"></script>
+</head>
+<body>
+	<button id="source2">Soucre</button>
+	<input id="show_value"> 
+</body>
+<script type="text/javascript">
+	(function(){
+		$("#source2").click(function(){
+			$("#show_value").trigger("my",[{username:"test",userData:"test"}]);
+		});
+			$("#show_value").on("my",function(event,data){
+				$(this).val("username:"+data.username+";userData:"+data.userData);
+			});
+	})();
+</script>
+</html>
