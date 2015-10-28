@@ -9,7 +9,6 @@ var SingletonTester = (function() {
 		this.pointY = options.pointY || 10;
 	}
 	var instance;
-
 	var _static = {
 		name: "SingletonTester",
 		getInstance: function(options) {
@@ -21,6 +20,8 @@ var SingletonTester = (function() {
 	};
 	return _static;
 })();
-var singletonTest=SingletonTester.getInstance({pointX:5});
-var singletonTest=SingletonTester.getInstance();
+var singletonTest = SingletonTester.getInstance({
+	pointX: 5
+});
+var singletonTest = SingletonTester.getInstance();
 console.log(singletonTest.pointX);
