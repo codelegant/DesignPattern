@@ -1,5 +1,5 @@
 ///<reference path="ObserverSubject.ts"/>
-var controlCheckbox:HTMLInputElement = document.getElementById("mainCheckbox"),
+var controlCheckbox = <HTMLInputElement>document.getElementById("mainCheckbox"),
 	addBtn = document.getElementById("btn_add"),
 	container = document.getElementById("observers");
 var AddNewObserver = function() {
