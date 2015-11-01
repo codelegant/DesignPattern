@@ -23,6 +23,7 @@ var mediator = (function() {
 
 			var subscription = topics[topic][i];
 			subscription.callback.apply(subscription.context, args);
+			//subscription.callback(args);
 		}
 		return this;
 	}
