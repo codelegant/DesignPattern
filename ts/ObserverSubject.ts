@@ -1,6 +1,6 @@
 module ObserverSubject {
 	export class Observer {
-		static Update(value) { }
+		Update(value) { }
 	}
 	export class ObserverList {
 		private observerList: Observer[];
