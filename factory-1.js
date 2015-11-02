@@ -72,5 +72,5 @@ var truck=AbstractVehicleFactory.getVehicle("truck",{
 	color:"neon yellow"
 });
 car.drive();
-console.log(car);
-console.log(truck);
+// console.log(car);
+// console.log(truck);
