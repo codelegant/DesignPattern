@@ -3,7 +3,7 @@ var ObserverSubject;
     var Observer = (function () {
         function Observer() {
         }
-        Observer.Update = function (value) { };
+        Observer.prototype.Update = function (value) { };
         return Observer;
     })();
     ObserverSubject.Observer = Observer;

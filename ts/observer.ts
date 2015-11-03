@@ -6,12 +6,11 @@ var controlCheckbox = <HTMLInputElement>document.getElementById("mainCheckbox"),
 ObserverSubject.extend(new ObserverSubject.Subject(), controlCheckbox);
 
 var AddNewObserver = function() {
-	var check = document.createElement("input"),
-		label = document.createElement("label"),
-		text = document.createTextNode("New Checkbox");
+	var check: HTMLInputElement = document.createElement("input"),
+		label: HTMLLabelElement = document.createElement("label"),
+		text: Text= document.createTextNode("New Checkbox");
 	check.type = "checkbox";
 	ObserverSubject.extend(new ObserverSubject.Observer(), check);
-	
 	check.Update = function(value) {
 		this.checked = value;
 	}
