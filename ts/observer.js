@@ -1,19 +1,20 @@
 ///<reference path="ObserverSubject.ts"/>
 var controlCheckbox = document.getElementById("mainCheckbox"), addBtn = document.getElementById("btn_add"), container = document.getElementById("observers");
-ObserverSubject.extend(new ObserverSubject.Subject(), controlCheckbox);
+//ObserverSubject.extend(new ObserverSubject.Subject(), controlCheckbox);
+var controlCheckboxExtend = ObserverSubject.extend(new ObserverSubject.Subject(), controlCheckbox);
 var AddNewObserver = function () {
     var check = document.createElement("input"), label = document.createElement("label"), text = document.createTextNode("New Checkbox");
     check.type = "checkbox";
-    ObserverSubject.extend(new ObserverSubject.Observer(), check);
-    check.Update = function (value) {
+    var checkExtend = ObserverSubject.extend(new ObserverSubject.Observer(), check);
+    checkExtend.Update = function (value) {
         this.checked = value;
     };
-    controlCheckbox.AddObserver(check);
-    label.appendChild(check);
+    controlCheckboxExtend.AddObserver(checkExtend);
+    label.appendChild(checkExtend);
     label.appendChild(text);
     container.appendChild(label);
 };
-controlCheckbox.onclick = function () {
-    this.Notify(controlCheckbox.checked);
+controlCheckboxExtend.onclick = function () {
+    this.Notify(controlCheckboxExtend.checked);
 };
 addBtn.onclick = AddNewObserver;

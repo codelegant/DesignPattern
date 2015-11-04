@@ -90,6 +90,10 @@ var ObserverSubject;
                 console.error(e);
             }
         }
+        // Object.keys(obj).forEach((key) => {
+        // 	extension[key] = obj[key];
+        // });
+        return extension;
     }
     ObserverSubject.extend = extend;
 })(ObserverSubject || (ObserverSubject = {}));

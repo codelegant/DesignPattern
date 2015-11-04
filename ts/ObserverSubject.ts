@@ -71,7 +71,7 @@ module ObserverSubject {
 			}
 		}
 	}
-	export function extend(obj: Object, extension: Object) {
+	export function extend<T, U>(obj: T, extension: U) {
 		for (var key in obj) {
 			try {
 				extension[key] = obj[key];
@@ -79,5 +79,9 @@ module ObserverSubject {
 				console.error(e);
 			}
 		}
+		// Object.keys(obj).forEach((key) => {
+		// 	extension[key] = obj[key];
+		// });
+		return extension as T & U;
 	}
 }
