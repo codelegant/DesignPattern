@@ -15,6 +15,6 @@ var AddNewObserver = function () {
     container.appendChild(label);
 };
 controlCheckboxExtend.onclick = function () {
-    this.Notify(controlCheckboxExtend.checked);
+    this.Notify(this.checked);
 };
 addBtn.onclick = AddNewObserver;
