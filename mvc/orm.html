@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>ORM</title>
+    <script src="../vendor/jquery-1.10.2.js"></script>
+    <script src="orm.js"></script>
+</head>
+<body>
+
+</body>
+<script>
+    var Asset = Model.create();
+    var asset = Asset.init();
+    asset.name = '这是Asset的名字';
+    asset.id = 1;
+    asset.save();
+</script>
+</html>
