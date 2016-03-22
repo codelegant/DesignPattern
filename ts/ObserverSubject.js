@@ -3,7 +3,9 @@ var ObserverSubject;
     var Observer = (function () {
         function Observer() {
         }
-        Observer.prototype.Update = function (value) { };
+
+        Observer.prototype.Update = function (value) {
+        };
         return Observer;
     })();
     ObserverSubject.Observer = Observer;
@@ -11,6 +13,7 @@ var ObserverSubject;
         function ObserverList() {
             this.observerList = [];
         }
+
         ObserverList.prototype.Add = function (obj) {
             return this.observerList.push(obj);
         };
@@ -66,6 +69,7 @@ var ObserverSubject;
         function Subject() {
             this.observers = new ObserverList();
         }
+
         Subject.prototype.AddObserver = function (observer) {
             this.observers.Add(observer);
         };
@@ -92,5 +96,6 @@ var ObserverSubject;
         }
         return extension;
     }
+
     ObserverSubject.extend = extend;
 })(ObserverSubject || (ObserverSubject = {}));

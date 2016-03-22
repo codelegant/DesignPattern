@@ -1,9 +1,9 @@
-var mailCounter=0;
+var mailCounter = 0;
 
-var subscriber1=subscribe("inbox/newMessage",function(topic,data){
-	console.log("A new message was received: ",topic);
+var subscriber1 = subscribe("inbox/newMessage", function (topic, data) {
+    console.log("A new message was received: ", topic);
 });
 
-var subscriberl2=subscribe("inbox/newMessage",function(topic,data){
-	
+var subscriberl2 = subscribe("inbox/newMessage", function (topic, data) {
+
 });
