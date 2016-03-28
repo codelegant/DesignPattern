@@ -11,9 +11,29 @@
 </body>
 <script>
     var Asset = Model.create();
+    var Person=Model.create();
+    Asset.extend({
+        create: function () {
+            this.newRecord = false;
+            this.parent.records[this.id] = this.dup();
+        },
+        update: function () {
+            this.parent.records[this.id] = this.dup();
+        },
+        dup   : function () {
+            return jQuery.extend(true, {}, this);
+        }
+    });
+    Asset.include({
+        find: function (id) {
+            var record = this.records;
+            if (!record) throw ('未知记录');
+            return record.dup();
+        }
+    });
     var asset = Asset.init();
     asset.name = '这是Asset的名字';
-    asset.id = 1;
+    //    asset.id = 1;
     asset.save();
 </script>
 </html>

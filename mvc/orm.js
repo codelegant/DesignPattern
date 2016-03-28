@@ -11,13 +11,22 @@ if (typeof Object.create !== 'function') {
         return new F();
     }
 }
+Math.guid = function () {
+    return 'xxxxxxxx-xxxx-4xxxx-yxxxx-xxxxxxxxxxxx'.replace(/[xy]/g, function (c) {
+        var r = Math.random() * 16 | 0,
+            v = c == 'x' ? r : (r & 0x3 | 0x8);
+        return v.toString(16);
+    }).toUpperCase();
+};
+
+
 var Model = {
     records  : {},
     inherited: function () {
         console.log('inherited');
     },
     created  : function () {
-        console.log('created');
+        this.records = {};
     },
     prototype: {
         init     : function () {
@@ -25,6 +34,7 @@ var Model = {
         },
         newRecord: true,
         create   : function () {
+            if (!this.id) this.id = Math.guid();
             this.newRecord = false;
             this.parent.records[this.id] = this;
         },
@@ -36,12 +46,12 @@ var Model = {
         },
         save     : function () {
             this.newRecord ? this.create() : this.update();
-        },
-        find     : function (id) {
-            if (!this.records[id]) throw('无此ID的记录');
-            return this.records[id];
-
         }
+    },
+    find     : function (id) {
+        if (!this.records[id]) throw('无此ID的记录');
+        return this.records[id];
+
     },
     create   : function () {
         var object = Object.create(this);
