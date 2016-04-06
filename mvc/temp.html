@@ -1,33 +1,33 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title>Controller</title>
-    <script src="../vendor/jquery-1.10.2.js"></script>
-    <script src="Controller.js"></script>
+  <meta charset="UTF-8">
+  <title>Controller</title>
+  <script src="../vendor/jquery-1.10.2.js"></script>
+  <script src="Controller.js"></script>
 </head>
 <style>
-    .view {
-        width: 200px;
-        height: 200px;
-        border: 1px solid black;
-    }
+  .view {
+    width  : 200px;
+    height : 200px;
+    border : 1px solid black;
+  }
 </style>
 <body>
 <div class="view H_View"></div>
 <script>
-    (function ($, Controller) {
-        'use strict';
-        var mod = new Controller;
-        mod.toggleClass = function (e) {
-            this.view.toggleClass('over', e.data);
-        };
-        mod.load(function () {
-            this.view = $('.H_View');
-            this.view.mouseover(this.proxy(this.toggleClass), true);
-            this.view.mouseout(this.proxy(this.toggleClass), false);
-        });
-    })(jQuery, Controller);
+  (function ($, Controller) {
+    'use strict';
+    var mod = new Controller;
+    mod.toggleClass = function (e) {
+      this.view.toggleClass('over', e.data);
+    };
+    mod.load(function () {
+      this.view = $('.H_View');
+      this.view.mouseover(this.proxy(this.toggleClass), true);
+      this.view.mouseout(this.proxy(this.toggleClass), false);
+    });
+  })(jQuery, Controller);
 </script>
 </body>
 </html>

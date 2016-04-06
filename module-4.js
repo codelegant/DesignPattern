@@ -1,11 +1,11 @@
 var myModuel = (function (JQ) {
-    function privateMethod() {
-        JQ(".container").html("test");
-    }
+  function privateMethod() {
+    JQ(".container").html("test");
+  }
 
-    return {
-        publicMethod: function () {
-            privateMethod();
-        }
+  return {
+    publicMethod: function () {
+      privateMethod();
     }
+  }
 })(jQuery);

@@ -1,27 +1,27 @@
 var myRevealingModeul = (function () {
-    var privateCounter = 0;
+  var privateCounter = 0;
 
-    function privateFunction() {
-        privateCounter++;
-    }
+  function privateFunction() {
+    privateCounter++;
+  }
 
-    function publicFunction() {
-        publicIncrement();
-    }
+  function publicFunction() {
+    publicIncrement();
+  }
 
-    function publicIncrement() {
-        privateFunction();
-    }
+  function publicIncrement() {
+    privateFunction();
+  }
 
-    function publicGetCount(argument) {
-        return privateCounter;
-    }
+  function publicGetCount(argument) {
+    return privateCounter;
+  }
 
-    return {
-        start    : publicFunction,
-        increment: publicIncrement,
-        count    : publicGetCount
-    }
+  return {
+    start: publicFunction,
+    increment: publicIncrement,
+    count: publicGetCount
+  }
 })();
 console.log(myRevealingModeul.start());
 console.log(myRevealingModeul.increment());

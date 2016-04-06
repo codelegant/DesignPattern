@@ -1,11 +1,11 @@
 var defineProp = function (obj, key, value) {
-    var config = {};
-    config.value = value;
-    // config.writable=true;
-    /*默认为false，不可遍历*/
-    config.enumerable = true;
-    // config.configurable=true;
-    Object.defineProperty(obj, key, config);
+  var config = {};
+  config.value = value;
+  // config.writable=true;
+  /*默认为false，不可遍历*/
+  config.enumerable = true;
+  // config.configurable=true;
+  Object.defineProperty(obj, key, config);
 }
 var person = Object.create(null);
 
